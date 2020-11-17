@@ -14,12 +14,12 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <math.h>
 
 /**
 * Part I Functions
 *
-*/
-    
+*/ 
         /**
         * Calculates precision and recall for a binary classfier  
         * 
@@ -33,7 +33,21 @@
         * Returns 1 if successful, 0 otherwise
         */
         int calcPR(bool *pred, bool *gt, int len, double *P, double *R) {
+            double TP = 0.0;
+            double TN = 0.0;
+            double FP = 0.0;
+            double FN = 0.0;
+            
+            bool good = 0; //on what conditions would it fail?
+            
+            // for loop 
+            // Example from doc: 
+            // if (*(pred + j) && !(*(gt + j))) FP++;
 
+            R = TP / (TP + FN);
+            P = TP / (TP + FP);
+            
+            return good;
         }
 
         /**
@@ -42,7 +56,7 @@
         * Returns the F1 measure
         */
         double calcFb(double P, double R, double beta) {
-
+            return (1 + pow(beta, 2))*((P*R)/((pow(beta, 2)*P)+ R));
         }
 
         // /**
@@ -54,7 +68,6 @@
 * Part II Functions
 *
 */
-
         // /**
         //  * Converts the response of a continuous classifier to a Boolean given a threshold
         //  * 
@@ -77,11 +90,11 @@
 * Part III Functions
 *
 */
-
         // // Converts image to a Boolean array
         // void thresh_img(Mat img, bool *B, double thresh) {
 
         // }
+
 int main(int argc, char** argv) {
 
     char option;
@@ -135,7 +148,7 @@ int main(int argc, char** argv) {
 
     }
     else if (option == 'D') {
-        std::cout << "\nPart IV: Evaluating image-based classifiers wit continous repsonses" << std::endl;
+        std::cout << "\nPart IV: Evaluating image-based classifiers with continous repsonses" << std::endl;
 
         // // 1. Open image as grayscale
         //     cv::Mat src2 = cv::imread("./bitmap_A2.png", 0);
