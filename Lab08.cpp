@@ -15,15 +15,10 @@
 #include <string>
 #include <sstream>
 
-int main(int argc, char** argv) {
-
-    char option;
-    std::cout << "Choose an option A/B/C/D: ";
-    std::cin >> option;
-
-    if (option == 'A') {
-        
-        std::cout << "\nPart I: Evaluating a binary classifier" << std::endl;
+/**
+* Part I Functions
+*
+*/
     
         /**
         * Calculates precision and recall for a binary classfier  
@@ -55,15 +50,10 @@ int main(int argc, char** argv) {
         //  * 
         //  */
 
-
-        // /**
-        //  * Main Program:
-        //  * Write code to calculate precision, recall and F1
-        //  */ 
-
-    }
-    else if (option == 'B') {
-        std::cout << "\nPart II: Evaluating a binary classifier with a continous response" << std::endl;
+/**
+* Part II Functions
+*
+*/
 
         // /**
         //  * Converts the response of a continuous classifier to a Boolean given a threshold
@@ -82,6 +72,34 @@ int main(int argc, char** argv) {
         // /**
         //  * Reads continous response in csv files
         //  */
+
+/**
+* Part III Functions
+*
+*/
+
+        // // Converts image to a Boolean array
+        // void thresh_img(Mat img, bool *B, double thresh) {
+
+        // }
+int main(int argc, char** argv) {
+
+    char option;
+    std::cout << "Choose an option A/B/C/D: ";
+    std::cin >> option;
+
+    if (option == 'A') {
+        
+        std::cout << "\nPart I: Evaluating a binary classifier" << std::endl;
+
+        // /**
+        //  * Main Program:
+        //  * Write code to calculate precision, recall and F1
+        //  */ 
+
+    }
+    else if (option == 'B') {
+        std::cout << "\nPart II: Evaluating a binary classifier with a continous response" << std::endl;
 
         // /** 
         //  * Main Program:
@@ -112,12 +130,6 @@ int main(int argc, char** argv) {
         // cv2.waitKey(200);
 
         // // 2. Open image as ground truth --- What does this mean?
-
-        // // 3. Write a function that converts the iamge to a Boolean array
-
-        // void thresh_img(Mat img, bool *B, double thresh) {
-
-        // }
 
         // // 4. Using the above functions, write code to calculate precison, recall and F1 measure for the above classfier
 
